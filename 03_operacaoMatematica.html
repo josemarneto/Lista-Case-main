@@ -1,0 +1,59 @@
+<meta charset="UTF-8">
+<script>
+    /*
+    PROBLEMA: CÁLCULO ENTRE DOIS NÚMEROS
+    Faça um script que leia 2 números e em seguida pergunte ao usuário qual operação ele deseja realizar. O resultado da operação deve ser acompanhado de uma frase que diga se o número é:
+    - par ou ímpar;
+    - positivo ou negativo;
+    - inteiro ou decimal.
+    */
+
+    //ENTRADA
+    const num1 = Number(prompt(`Informe um Número Desejado`));
+    const num2 = Number(prompt(`Informe outro Número Desejado`));
+    const operacao = prompt(`Informe qual operação deseja utilizar: \n1. Adição \n2. Subtração \n3. Multiplicação \n4. Divisão`)
+    let resultado;
+    //PROCESSAMENTO
+    switch (operacao) {
+        case `1`:
+            resultado = num1 + num2;
+            break;
+        case `2`: 
+            resultado = num1 - num2;
+            break;
+        case "3":
+            resultado = num1 * num2;
+            break;
+        case "4":
+            resultado = num1 / num2;
+        default:
+            alert(`Valor Inválido`);
+            break;
+    }
+    switch (true) {
+        case resultado % 2 === 0:
+            document.write(`${resultado.toFixed(2)} <br> Par <br>`);
+            break;
+        default:
+            document.write(`${resultado.toFixed(2)} <br> Impar <br>`);
+            break;
+    }
+    switch (true) {
+        case resultado > 0:
+            document.write(`Positivo <br>`);
+            break;
+        default:
+            document.write(`Negativo <br>`);
+            break;
+    }
+    switch (true) {
+        case Number.isInteger(resultado):
+            document.write(`Inteiro`);
+            break;   
+        default:
+            document.write(`Decimal`);
+            break;
+    }
+    //SAÍDA
+
+</script>
